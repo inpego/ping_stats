@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, 'ping_stats'
-set :repo_url, 'git@bitbucket.org:inpego/ping_stats.git'
+set :repo_url, 'git@github.com:inpego/ping_stats.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
