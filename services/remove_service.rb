@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PingStats
   class RemoveService
     def initialize(ip_address)

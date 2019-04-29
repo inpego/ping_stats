@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rack/test'
 require 'active_support/testing/time_helpers'
 require_relative '../api'
@@ -80,7 +82,6 @@ describe PingStats::Api, type: :request do
       end
 
       it 'disables server' do
-        p Server.count
         expect { delete '/', ip_address: ip_address }.to change { Server.last.enabled }.from(true).to(false)
       end
     end

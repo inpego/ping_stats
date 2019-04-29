@@ -1,0 +1,25 @@
+AllCops:
+  # Your Ruby version
+  TargetRubyVersion: 2.6.3
+  DisplayCopNames: true
+  # Exclude what you need here.
+  Exclude:
+    - migrations/*
+    - config/**/*
+    - tmp/**/*
+    - Capfile
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/BlockLength:
+  Max: 100
+
+Metrics/LineLength:
+  Max: 120
+
+Security/YAMLLoad:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
