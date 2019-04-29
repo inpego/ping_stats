@@ -39,7 +39,7 @@ describe PingStats::Api, type: :request do
       subject { JSON.parse(last_response.body).symbolize_keys }
 
       it 'returns correct min//max/avg/stddev/lost stats' do
-        is_expected.to eq(avg: 58.615, min: 39.3, max: 205, median: 45, stddev: 41.44, lost: 20)
+        is_expected.to eq(avg: 58.62, min: 39.3, max: 205, median: 45, stddev: 41.44, lost: 20)
       end
     end
 

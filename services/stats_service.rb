@@ -22,7 +22,7 @@ module PingStats
 
     def fetch_stats
       {
-        avg: @server.pings_dataset.where(@conditions).avg(:ping_time),
+        avg: @server.pings_dataset.where(@conditions).avg(:ping_time).round(2),
         min: @server.pings_dataset.where(@conditions).min(:ping_time),
         max: @server.pings_dataset.where(@conditions).max(:ping_time),
         median: median,
