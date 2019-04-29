@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PingStats
   class Processor
     START_PORT = 9090

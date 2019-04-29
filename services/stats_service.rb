@@ -1,18 +1,26 @@
+# frozen_string_literal: true
+
 module PingStats
   class StatsService
     def initialize(ip_address, start_datetime, end_datetime)
       @server = Server.find(ip_address: ip_address)
-      @conditions = {created_at: start_datetime..end_datetime}
+      @conditions = { created_at: start_datetime..end_datetime }
     end
 
     def call
       return unless @server
 
       @count = @server.pings_dataset.where(@conditions).count
-      return if @count == 0
+      return if @count.zero?
 
       @successfull_count = @server.pings_dataset.where(@conditions).count(:ping_time)
 
+      fetch_stats
+    end
+
+    private
+
+    def fetch_stats
       {
         avg: @server.pings_dataset.where(@conditions).avg(:ping_time),
         min: @server.pings_dataset.where(@conditions).min(:ping_time),
@@ -22,8 +30,6 @@ module PingStats
         lost: lost
       }
     end
-
-    private
 
     def median
       limit = @successfull_count.even? ? 2 : 1
