@@ -2,6 +2,11 @@
 1. RVM
 2. PostgreSQL
 3. Created database
+
+# Demo
+
+**http://ec2-34-201-41-199.compute-1.amazonaws.com**
+
 # Usage
 ## GET /
 
@@ -28,3 +33,4 @@ Parameters:
 Parameters:
 
 **ip_address**: Server's IP address in dot-decimal notation
+
