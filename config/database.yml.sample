@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  user: postgres
+  password: 123456
+  host: 127.0.0.1
+  port: 5432
+  schema_search_path: public
+  encoding: utf8
+  max_connections: 10
+development:
+  <<: *default
+  database: ping_stats
+
+test:
+  <<: *default
+  database: ping_stats_test
