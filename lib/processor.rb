@@ -2,9 +2,6 @@
 
 module PingStats
   class Processor
-    START_PORT = 9090
-    MAX_COLLECTORS = 2
-
     def self.restart_all
       Server.where(enabled: true).each do |server|
         new(server: server).start if `ps ax | grep '[p]ing #{server.ip_address}'`.empty?
