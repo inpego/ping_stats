@@ -14,6 +14,9 @@ If for some part of the time in this period the IP address was outside the calcu
 
 For example, we added the ip-address 8.8.8.8 at 1 o’clock, turned it off at 2, turned it on at 3 and turned it off at 4. If I will request statistics from 1 to 4 hours, the application needs to combine the intervals 1-2, 3-4 and give these statistics on the combined interval. If the IP address was not in the calculation of statistics all the time or there was so little time that we did not have time to make at least 1 measurement, we need to return an error message.
 
+# Running
+
+`$ docker-compose up`
 
 # Usage
 ## GET /

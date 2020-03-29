@@ -9,7 +9,7 @@ module PingStats
   DB = Sequel.connect(
     YAML.load(File.read(File.join(__dir__, 'config', 'database.yml')))[ENV['RACK_ENV'] || 'development']
   )
-  Dir[*%w[lib models services].map { |d| File.join(__dir__, d, '**', '*.rb') }].each { |f| require f }
+  Dir[*%w[lib models services].map { |d| File.join(__dir__, d, '**', '*.rb') }].sort.each { |f| require f }
 
   class Api < Grape::API
     format :json

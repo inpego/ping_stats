@@ -1,6 +1,6 @@
 AllCops:
   # Your Ruby version
-  TargetRubyVersion: 2.6.3
+  TargetRubyVersion: 2.7.0
   DisplayCopNames: true
   # Exclude what you need here.
   Exclude:
@@ -10,7 +10,7 @@ AllCops:
     - Capfile
 
 Metrics/AbcSize:
-  Max: 20
+  Max: 24
 
 Metrics/BlockLength:
   Max: 100
